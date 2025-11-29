@@ -1,0 +1,582 @@
+/* --- Definisi Warna Tema --- */
+:root {
+    --sea-blue: #0077b6;         /* Biru Laut untuk tombol, link, dan aksen */
+    --dark-sea-blue: #023e8a;    /* Biru lebih gelap untuk header/footer */
+    --sand-brown: #0077b6;       /* Coklat Pasir terang untuk background utama */
+    --dark-sand: #ffffff;        /* Coklat Pasir lebih gelap untuk detail */
+    --text-color: #333333;       /* Warna teks utama yang mudah dibaca */
+    --white-color: #ffffff;      /* Putih */
+    --shopee-orange: #EE4D2D; /* <--- TAMBAHKAN BARIS INI */
+}
+
+/* --- Pengaturan Dasar & Font --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--sand-brown);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* --- Header & Navigasi --- */
+header {
+    background-color: var(--white-color);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 1rem 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    /* Properti untuk teks tidak lagi diperlukan */
+    display: block; /* Membantu alignment vertikal */
+}
+
+.logo img {
+    height: 50px; /* Atur tinggi logo sesuai keinginan Anda */
+    width: auto;  /* Biarkan lebar menyesuaikan agar gambar tidak gepeng */
+    display: block; /* Menghilangkan spasi ekstra di bawah gambar */
+    /* Tambahkan baris ini untuk membuat animasi halus */
+    transition: transform 0.3s ease-in-out; 
+}
+
+/* Kode ini akan dijalankan saat kursor di atas logo */
+.logo img:hover {
+    transform: rotate(-7deg); /* Coba ganti angka derajatnya (bisa positif atau negatif) */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--sea-blue);
+}
+
+/* --- Section Umum --- */
+section {
+    padding: 80px 5%;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: var(--dark-sea-blue);
+    margin-bottom: 1rem;
+}
+
+/* --- Hero Section --- */
+.hero {
+    /* Menambahkan gambar latar belakang */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('image/Background.jpg');
+    
+    /* Properti agar gambar tampil baik */
+    background-size: cover; /* Membuat gambar menutupi seluruh area */
+    background-position: center; /* Memposisikan gambar di tengah */
+    background-repeat: no-repeat; /* Mencegah gambar berulang */
+    
+    /* Menambahkan warna fallback jika gambar gagal dimuat */
+    background-color: var(--dark-sea-blue);
+    
+    color: var(--white-color);
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative; /* Diperlukan untuk beberapa teknik overlay lanjutan */
+}
+
+.hero-content h1 {
+    font-size: 2.5rem; /* Ukuran font tetap sama */
+    margin: 0 auto 0.5rem auto; /* Atur margin agar rapi */
+    
+    /* --- Kode Animasi Ketik Dimulai Di Sini --- */
+    
+    /* 1. Membuat "kotak" yang lebarnya akan dianimasikan */
+    overflow: hidden; /* Sembunyikan teks yang belum "diketik" */
+    white-space: normal; /* Jaga agar teks tetap dalam satu baris saat animasi berjalan */
+    width: auto; /* Mulai dengan lebar 0, sehingga teks tidak terlihat */
+    
+    /* 2. Membuat kursor ketik */
+    border-right: none; .15em solid var(--sand-brown); /* Goresan vertikal yang menjadi kursor. Warnanya disesuaikan agar kontras. */
+    
+    /* 3. Menjalankan animasi */
+    animation: none;
+        typing 3.5s steps(33, end) forwards, /* Animasi mengetik teks */
+        blink-caret .75s step-end infinite;  /* Animasi kursor berkedip */
+}
+
+/* --- Keyframes (Definisi Animasi) --- */
+
+/* Keyframe untuk animasi mengetik: melebarkan kotak dari 0% ke 100% */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+/* Keyframe untuk animasi kursor berkedip: mengubah warna kursor menjadi transparan dan kembali lagi */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: var(--sand-brown); }
+}
+
+.hero-content p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    background-color: var(--white-color);
+    color: var(--sea-blue);
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: var(--sand-brown);
+    color: var(--dark-sea-blue);
+    transform: translateY(-3px);
+}
+
+.hero-buttons {
+    margin-top: 2rem; /* Memberi jarak dari paragraf di atasnya */
+    display: flex;
+    flex-direction: column; /* Menyusun tombol secara vertikal */
+    align-items: center;    /* Memastikan tombol tetap di tengah */
+    gap: 1rem;              /* Jarak antar tombol */
+}
+
+.shopee-button:hover {
+    background-color: #d73c1a; /* Warna oranye lebih gelap saat disentuh cursor */
+    color: var(--white-color); /* Pastikan warna teks tetap putih */
+    box-shadow: 0 5px 15px rgba(238, 77, 45, 0.4); /* Bayangan oranye agar lebih menarik */
+}
+
+/* --- About Section --- */
+.about {
+    background-color: var(--white-color);
+}
+.about p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+/* --- Products Section --- */
+/* --- Products Section (Penyesuaian Baru) --- */
+#products {
+    background-color: var(--dark-blue); /* Mengubah latar belakang section produk menjadi biru tua */
+    padding-top: 80px; /* Menjaga padding */
+    padding-bottom: 80px;
+}
+
+/* Ini adalah kode yang Anda butuhkan untuk mengubah warna judulnya */
+#products h2 {
+    color: var(--white-color); /* Mengubah warna H2 KHUSUS di dalam #products menjadi putih */
+}
+
+/* --- Products Section (PILIHAN 1: 3D Parallax Lift) --- */
+.product-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3rem; 
+    margin-top: 5rem;
+}
+
+.product-card {
+    background-color: var(--white-color);
+    width: 300px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05), 0 10px 30px rgba(1, 73, 124, 0.1);
+    text-align: center;
+    padding: 1.5rem;
+    padding-top: 0; 
+    /* Transisi untuk kartu */
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.product-card:hover {
+    transform: translateY(-10px); /* Kartu naik sedikit */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08), 0 15px 40px rgba(1, 73, 124, 0.2);
+}
+
+.product-card img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-top: -50px;
+    box-shadow: 0 10px 20px rgba(1, 73, 124, 0.2);
+    border: 5px solid var(--white-color);
+    /* Transisi untuk gambar, lebih lambat untuk efek 'mengambang' */
+    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.product-card:hover img {
+    /* Gambar naik LEBIH TINGGI dan sedikit membesar, menciptakan efek parallax */
+    transform: translateY(-20px) scale(1.05); 
+}
+
+.product-content {
+    margin-top: 1rem;
+}
+
+.product-content h3 {
+    color: var(--dark-blue);
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+}
+
+.product-content p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--text-color);
+    min-height: 80px; 
+    margin-bottom: 1.5rem;
+}
+
+.product-button {
+    display: inline-block;
+    background-color: var(--primary-blue);
+    color: var(--white-color);
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.product-button:hover {
+    background-color: var(--dark-blue);
+    transform: scale(1.1) translateY(-3px); /* Tombol juga ikut naik dan membesar */
+    box-shadow: 0 8px 20px rgba(0, 169, 224, 0.4);
+}
+
+/* --- Partners Section --- */
+.partners {
+    background-color: var(--dark-sand);
+    padding: 60px 5%;
+}
+
+.partners h2 {
+    color: var(--dark-sea-blue);
+}
+
+.partner-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.partner-logos img {
+    height: 50px;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.partner-logos img:hover {
+    opacity: 1;
+}
+
+/* --- Contact Section --- */
+.contact {
+    background-color: var(--dark-blue); 
+}
+
+#contact h2 {
+    color: var(--white-color);
+    margin-bottom: 1.5rem; /* DIUBAH: Menambah jarak di bawah judul utama */
+}
+
+#contact .section-subtitle {
+    color: var(--white-color);
+    opacity: 0.9; 
+    margin-bottom: 3rem; /* DIUBAH: Menambah jarak yang lebih signifikan di bawah subjudul */
+}
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    gap: 4rem; /* DIUBAH: Sedikit menambah jarak antar kolom */
+    flex-wrap: wrap; 
+    text-align: left;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.contact-info, .contact-form {
+    flex: 1 1 400px; 
+}
+
+.contact-info h3, .contact-form h3 {
+    color: var(--white-color); 
+    font-size: 1.8rem;
+    margin-bottom: 2rem; /* DIUBAH: Menambah jarak di bawah judul kolom */
+}
+
+/* Mengubah semua teks paragraf (Alamat, dll) menjadi putih */
+.contact-info p {
+    line-height: 1.8; /* Menjaga line-height yang sudah bagus */
+    color: var(--white-color); 
+    margin-bottom: 1.75rem; /* DIUBAH: Menambah jarak antar setiap item kontak (Alamat, Email, WA) */
+}
+
+/* ... (sisa kode Anda untuk link dan form tetap sama) ... */
+.contact-info a {
+    color: var(--white-color);
+    text-decoration: underline; 
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: var(--primary-blue);
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 1rem;
+    border: 1px solid var(--mid-blue); 
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.1); 
+    color: var(--white-color); 
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: var(--mid-blue);
+    opacity: 1;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 8px rgba(0, 169, 224, 0.5);
+}
+
+.contact-form button {
+    width: auto;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: var(--dark-sea-blue);
+    color: var(--white-color);
+    text-align: center;
+    padding: 2rem 5%;
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+}
+/* 1. Styling dasar Tombol Hamburger (HANYA terlihat di mobile) */
+#hamburger-btn {
+    display: none; /* Default: Sembunyikan di Desktop */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 25px;
+    flex-direction: column;
+    justify-content: space-around;
+    z-index: 1001; 
+}
+
+/* 2. Styling garis-garis pada hamburger */
+#hamburger-btn span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--text-color);
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* 3. Media Query: Kode ini hanya aktif di layar kecil (lebar maks 768px) */
+@media (max-width: 768px) {
+
+    /* 3.1. Tampilkan tombol hamburger HANYA di layar kecil */
+    #hamburger-btn {
+        display: flex; /* Aktifkan di Mobile */
+    }
+
+    /* 3.2. Sembunyikan navigasi dan atur posisinya */
+    #nav-links {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 70%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: var(--white-color);
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    /* 3.3. Kelas "nav-open" yang akan ditambahkan oleh JavaScript */
+    #nav-links.nav-open {
+        transform: translateX(0);
+    }
+
+    /* [Opsional] Animasi ikon hamburger menjadi 'X' saat menu terbuka */
+    #hamburger-btn.is-active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    #hamburger-btn.is-active span:nth-child(2) {
+        opacity: 0;
+    }
+    #hamburger-btn.is-active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+/* --- Certifications Section (Sertifikasi) --- */
+.certifications {
+    background-color: var(--white-color); /* Latar belakang putih agar kontras */
+    padding: 80px 5%;
+}
+
+.certifications h2 {
+    color: var(--dark-sea-blue); /* Warna judul yang konsisten */
+    margin-bottom: 3rem;
+}
+
+.certification-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cert-card {
+    /* Membuat setiap kartu sertifikasi memiliki batasan ukuran */
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    
+    /* Box shadow untuk sedikit dimensi */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+.cert-card img {
+    /* Agar gambar mengisi wadahnya */
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    
+    /* Efek Filter: Mengubah gambar menjadi abu-abu (grayscale) */
+    filter: grayscale(100%); 
+    
+    /* Transisi agar perubahan warna/filter lebih halus saat hover */
+    transition: all 0.5s ease-in-out; 
+}
+
+/* Efek Hover: Menghilangkan filter grayscale saat kursor di atasnya */
+.cert-card img:hover {
+    filter: grayscale(0%); /* Kembali ke warna asli */
+    transform: scale(1.05); /* Sedikit membesar untuk penekanan */
+    cursor: pointer; /* Ubah kursor menjadi pointer */
+}
+
+/* Penyesuaian Responsif untuk gambar sertifikasi */
+@media (max-width: 600px) {
+    .cert-card {
+        width: 120px;
+        height: 120px;
+    }
+}
+/* --- Floating WhatsApp Button Styling --- */
+.whatsapp-float {
+    /* Menentukan posisi tombol agar mengambang */
+    position: fixed;
+    bottom: 20px; /* Jarak dari bawah */
+    left: 20px;  /* Jarak dari kiri */
+    z-index: 1000; /* Pastikan tombol selalu di atas elemen lain */
+
+    /* Styling visual */
+    background-color: #25D366; /* Warna hijau khas WhatsApp */
+    color: var(--white-color);
+    width: 60px; /* Ukuran tombol */
+    height: 60px;
+    border-radius: 50%; /* Membuat tombol menjadi bulat */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px; /* Ukuran ikon */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25); /* Bayangan agar terlihat menonjol */
+    
+    /* Efek transisi */
+    transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    background-color: #1FAF59; /* Warna sedikit lebih gelap saat di-hover */
+    transform: scale(1.1) rotate(5deg); /* Efek membesar dan sedikit berputar saat di-hover */
+}
+
+/* Responsif: Kecilkan tombol di layar mobile */
+@media (max-width: 768px) {
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+        bottom: 15px;
+        left: 15px;
+    }
+}
