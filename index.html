@@ -1,238 +1,385 @@
 <!DOCTYPE html>
-<html lang="id">
+<html class="light" lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PT Berae Segara Nusantara</title>
-    <link rel="icon" href="image/LOGO_BERAE_-removebg-preview.png" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
-     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>PT Berae Segara Nusantara - Seafood Raw Material Distributor</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <style type="text/tailwindcss">
+        :root {
+            --sea-blue: #137fec;
+            --deep-sea: #0a2540;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* --- Animasi Logo Bergerak --- */
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .animate-infinite-scroll {
+            display: flex;
+            width: max-content;
+            animation: scroll 30s linear infinite;
+        }
+
+        /* Berhenti saat hover */
+        .animate-infinite-scroll:hover {
+            animation-play-state: paused;
+        }
+    </style>
+    <script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#137fec",
+                "deep-sea": "#0a2540",
+              },
+              fontFamily: {
+                "display": ["Inter"]
+              },
+            },
+          },
+        }
+    </script>
 </head>
-<body>
-
-    <header>
-    <nav>
-        <a href="index.html" class="logo"><img src="image/Logo Berae (KOP Surat).png" alt="Logo Durio Belitung"></a> 
-        
-        <button id="hamburger-btn" aria-label="Buka menu navigasi">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        
-        <ul id="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">Tentang Kami</a></li>
-            <li><a href="#products">Produk</a></li>
-            <li><a href="#partners">Partner</a></li>
-            <li><a href="#contact">Kontak</a></li>
-        </ul>
-    </nav>
-</header>
-
-    <main>
-        <section id="home" class="hero">
-            <div class="hero-content">
-    <h1><strong>Bukan Hanya Soal Kenyang Tapi Juga Bergizi</strong></h1>
-    <p>Ikan Yang Kualitasnya Terjaga Akan Menjamin Kandungan Gizinya.</p>
-    
-    <div class="hero-buttons">
-        <a href="#products" class="cta-button">Lihat Ikan Kami Yuk!</a> 
+<body class="bg-white text-[#111418] antialiased">
+<header class="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 h-20 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+            <div class="flex items-center">
+                <img src="Image/Logo Berae (KOP Surat).png" alt="Logo Berae Segara" class="h-10 w-auto object-contain">
+            </div>
+        </div>
+        <nav class="hidden md:flex items-center gap-8">
+            <a class="text-sm font-semibold text-deep-sea hover:text-primary transition-colors" href="#about">About Us</a>
+            <a class="text-sm font-semibold text-deep-sea hover:text-primary transition-colors" href="#products">Products</a>
+            <a class="text-sm font-semibold text-deep-sea hover:text-primary transition-colors" href="#certifications">Certifications</a>
+            <a class="text-sm font-semibold text-deep-sea hover:text-primary transition-colors" href="#contact">Contact</a>
+        </nav>
+        <a href="https://wa.me/6285778053118?text=Halo%20PT%20Berae%20Segara%20Nusantara,%20saya%20ingin%20bertanya%20mengenai%20produk%20seafood." target="_blank" class="bg-primary text-white px-6 py-2.5 rounded-full text-sm font-bold shadow-sm hover:opacity-90 transition-all inline-block">
+            Hubungi Kami
         </a>
     </div>
-        </section>
+</header>
 
-        <section id="about" class="about">
-            <h2>Tentang Kami</h2>
-            <p>
-                Selamat datang di <strong>BERAE</strong>! Sebagai mitra terpercaya Anda untuk suplai produk perikanan segar dan beku berkualitas. Berangkat dari filosofi "Berae" yang bearti Mengumpulkan, kami menghubungkan hasil tangkapan nelayan terbaik langsung ke pasar, dengan komitmen pada Mutu dan Gizi yang prima.
-            </p>
-        </section>
-
-       <section id="products" class="products" data-aos="fade-up">
-    <h2>Produk Unggulan Kami</h2>
-    <div class="product-grid">
-
-        <div class="product-card" data-aos="fade-up" data-aos-delay="100">
-            <img src="image/Dori Fillet.webp" alt="Peletek Telur Cumi">
-            <div class="product-content">
-                <h3>Dori Fillet</h3>
-                <p>Dori dari hati para pembudidaya lokal untuk memenuhi gizimu.</p>
+<main>
+    <section class="relative h-[85vh] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0 bg-cover bg-center" style="background-image: linear-gradient(rgba(10, 37, 64, 0.5), rgba(10, 37, 64, 0.7)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuB_MP0TW3b2Y893jFCE7gh7u7rVO94ulteDg5MbG7oLPMAst99RL5vBo2Rc3e6RWrAo4EYXPPoJWKHUcHZpQCE3tw7caFwFI_urLbkdVx2I6VzJzbZSOekx6G3FtG4JUfPCuOagqgGYiLuWVkSfuOFlRzRt-71lYx0NX4N6hZ4ajJqX8IlKBXaYZfvi1srurqFMNhuc5lmC8ef9_ca1nNcu-p4sg4w1kvBHwD1ate8zEXpE2iTya8vPV_8UNS_gTzYf_QaR94IOhE7U');"></div>
+        <div class="relative z-10 max-w-5xl px-6 text-center">
+            <h2 class="text-white text-4xl md:text-7xl font-black leading-tight tracking-tight mb-8">
+                Penyedia Bahan Baku Seafood Terpercaya & Berkualitas Tinggi
+            </h2>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://wa.me/6285778053118?text=Halo%20PT%20Berae%20Segara%20Nusantara,%20saya%20tertarik%20dengan%20produk%20layanan%20Anda." target="_blank" class="bg-primary text-white px-10 py-4 rounded-full text-lg font-bold shadow-xl hover:bg-blue-600 transition-all inline-block">
+                    Hubungi Kami
+                </a>
+                <a href="#products" class="border-2 border-white text-white px-10 py-4 rounded-full text-lg font-bold hover:bg-white hover:text-deep-sea transition-all inline-block">
+                    Lihat Produk
+                </a>
             </div>
-            <div class="product-overlay">
-            </div>
-        </div>
-
-        <div class="product-card" data-aos="fade-up" data-aos-delay="200">
-            <img src="image/Udang Vanamei.jpg" alt="Kerupuk Kulit Pisang">
-            <div class="product-content">
-                <h3>Udang Vanamei</h3>
-                <p>Udang Vanamei yang dari benih hingga pemanenannya terjaga.</p>
-            </div>
-            <div class="product-overlay">
-            </div>
-        </div>
-
-        <div class="product-card" data-aos="fade-up" data-aos-delay="300">
-            <img src="image/Cakalang.webp" alt="Kerupuk Tinta Cumi">
-            <div class="product-content">
-                <h3>Cakalang Frozen</h3>
-                <p>Cakalang yang sudah dibekukan sejak diatas kapal nelayan.</p>
-            </div>
-            <div class="product-overlay">
-            </div>
-        </div>
-
-        <div class="product-card" data-aos="fade-up" data-aos-delay="400">
-            <img src="image/Cumi Tube.avif" alt="Keripik Pisang Manis">
-            <div class="product-content">
-                <h3>Cumi Tube</h3>
-                <p>Cumi yang diolah secara higenis dengan mutu tetap terjaga.</p>
-            </div>
-            <div class="product-overlay">
-            </div>
-        </div>
-
-        <div class="product-card" data-aos="fade-up" data-aos-delay="500">
-            <img src="image/lele.jpg" alt="Getas Ikan">
-            <div class="product-content">
-                <h3>Lele Fresh</h3>
-                <p>Lele yang dibudidayakan secara itensif untuk memastikan kebersihan dan kualitasnya.</p>
-            </div>
-            <div class="product-overlay">
-            </div>
-        </div>
-
-        <div class="product-card" data-aos="fade-up" data-aos-delay="600">
-            <img src="image/Background.jpg" alt="Getas Ikan">
-            <div class="product-content">
-                <h3>Produk Lainnya</h3>
-                <p>Nila fresh, Teri Medan, Udang Kupas, Baby Tuna, Kembung Banjar, Selar, Kakap Fillet, dan Salmon Fillet.</p>
-            </div>
-            <div class="product-overlay">
-            </div>
-        </div>
-
-    </div>
-</section>
         </div>
     </section>
-    <section id="certifications" class="certifications">
-            <h2>Sertifikasi Kami</h2>
-            <div class="certification-grid">
-                <div class="cert-card" data-aos="zoom-in" data-aos-delay="100">
-                    <img src="image/Halal_Indonesia.svg.png" alt="Sertifikasi A">
+
+    <section class="py-24 bg-white" id="about">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="relative">
+                    <img alt="Seafood Processing Facility" class="rounded-2xl shadow-2xl object-cover h-[500px] w-full" src="Image/Gemini_Generated_Image_uwsdiauwsdiauwsd (1).png"/>
+                    <div class="absolute -bottom-6 -right-6 bg-primary text-white p-8 rounded-2xl shadow-xl">
+                        <p class="text-4xl font-black">Since</p>
+                        <p class="text-2xl font-bold opacity-90">2025</p>
+                    </div>
                 </div>
-                <div class="cert-card" data-aos="zoom-in" data-aos-delay="200">
-                    <img src="image/HACCP.jpg" alt="Sertifikasi B">
-                </div>
-                <div class="cert-card" data-aos="zoom-in" data-aos-delay="300">
-                    <img src="image/SKP.jpeg" alt="Sertifikasi C">
-                </div>
-                <div class="cert-card" data-aos="zoom-in" data-aos-delay="400">
-                    <img src="image/CBIB.png" alt="Sertifikasi D">
-                </div>
-                <div class="cert-card" data-aos="zoom-in" data-aos-delay="500">
-                    <img src="image/CPIB.png" alt="Sertifikasi E">
+                <div class="space-y-8">
+                    <div>
+                        <span class="text-primary font-bold tracking-widest uppercase text-sm block mb-2">Who We Are</span>
+                        <h3 class="text-deep-sea text-4xl font-black tracking-tight">Building a Sustainable Seafood Future</h3>
+                    </div>
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 mt-1"><span class="material-symbols-outlined text-primary">history</span></div>
+                            <div>
+                                <h4 class="font-bold text-lg text-deep-sea mb-1">Our History</h4>
+                                <p class="text-gray-600 leading-relaxed">Berae yang bearti (menyalurkan) berkomitmen menjadi jembatan antara hasil tangkapan dan budidaya terbaik nelayan ke tangan konsumen dengan memastikan standar dan kualitas pangan.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 mt-1"><span class="material-symbols-outlined text-primary">visibility</span></div>
+                            <div>
+                                <h4 class="font-bold text-lg text-deep-sea mb-1">Our Vision</h4>
+                                <p class="text-gray-600 leading-relaxed">Menjadi distributor produk perikanan terkemuka di Indonesia yang diakui atas keandalan, kualitas prima dan kontribusi nyata pada pemenuhan gizi di Indonesia.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="partners" class="partners" data-aos="zoom-in">
-    <h2>Partner Kami</h2>
-    <div class="partner-logos">
-        <img src="image/Syaqua_Blue_Png.png" alt="Logo BI_Logo" 
-             data-aos="fade-up" data-aos-delay="100">
-        
-        <img src="image/SPPG Bekasi.png" alt="kemenkop"
-             data-aos="fade-up" data-aos-delay="200">
-        
-        <img src="image/SPPG Bogor.png" alt="Logo Partner 3"
-             data-aos="fade-up" data-aos-delay="300">
-        
-        <img src="image/SPPG Cianjur.png" alt="Logo Partner 4"
-             data-aos="fade-up" data-aos-delay="400">
+    <section class="py-16 bg-blue-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="space-y-2">
+                    <p class="text-4xl font-black text-primary">50+</p>
+                    <p class="text-sm font-bold text-deep-sea uppercase tracking-wider">Global Partners</p>
+                </div>
+                <div class="space-y-2">
+                    <p class="text-4xl font-black text-primary">12k+</p>
+                    <p class="text-sm font-bold text-deep-sea uppercase tracking-wider">Tons Annually</p>
+                </div>
+                <div class="space-y-2">
+                    <p class="text-4xl font-black text-primary">24/7</p>
+                    <p class="text-sm font-bold text-deep-sea uppercase tracking-wider">Cold Chain Ops</p>
+                </div>
+                <div class="space-y-2">
+                    <p class="text-4xl font-black text-primary">100%</p>
+                    <p class="text-sm font-bold text-deep-sea uppercase tracking-wider">Quality Tested</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <img src="image/SPPG Jakarta.png" alt="Logo Partner 5"
-             data-aos="fade-up" data-aos-delay="500">    
+    <section class="py-24 bg-white" id="products">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10">
+            <div class="text-center mb-16">
+                <h3 class="text-deep-sea text-4xl font-black tracking-tight">Premium Seafood Raw Materials</h3>
+                <p class="text-gray-500 mt-4 max-w-2xl mx-auto">Kami menyediakan berbagai kategori seafood dengan standar kesegaran tertinggi untuk kebutuhan industri dan retail.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="group bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all">
+                    <div class="relative h-64 overflow-hidden">
+                        <img alt="Frozen Fish" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjSACj299qHAzq0LXY_bGkvpX34yVIA-4tTIZT6E3n9MLBN41Rb9dRV47_0JQP-AkXQyOxTthoNpTUonBBQD2Ch4RiS3Ps4bjn96tOmyv5y0r-VOP5pG5lXFtXyql3S_CNcuQfHHEO4q9plFbwXRIukHAatUb6t9seIQRWIgNdl2ncMUTXJ47Uq3A4Q4bI8ntHPAPJVFASrd24jmzYrrK3j1ZWov0LaqE3XjUJ1SZhS6-8imx2fb6MiJNdPueHePftmKVdoqYDbY5k"/>
+                        <span class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-primary">Pulau Bali</span>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-bold text-xl text-deep-sea mb-2">Frozen Fish</h4>
+                        <p class="text-sm text-gray-500 mb-4">Tuna, Cakalang, Salmon, Kembung, meka, tenggiri dll.</p>
+                        <a href="https://wa.me/6285778053118?text=Halo,%20saya%20ingin%20tahu%20lebih%20lanjut%20mengenai%20produk%20Frozen%20Fish." target="_blank" class="text-primary font-bold text-sm flex items-center gap-2 hover:gap-3 transition-all">Details <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+                    </div>
+                </div>
+                <div class="group bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all">
+                    <div class="relative h-64 overflow-hidden">
+                        <img alt="Seafood Fillets" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="Image/ikan fillet.jpg"/>
+                        <span class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-primary">Pulau Jawa</span>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-bold text-xl text-deep-sea mb-2">Seafood Fillets</h4>
+                        <p class="text-sm text-gray-500 mb-4">Dori, Kakap, Cucut, Gindara, dll.</p>
+                        <a href="https://wa.me/6285778053118?text=Halo,%20saya%20ingin%20tahu%20lebih%20lanjut%20mengenai%20produk%20Seafood%20Fillets." target="_blank" class="text-primary font-bold text-sm flex items-center gap-2 hover:gap-3 transition-all">Details <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+                    </div>
+                </div>
+                <div class="group bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all">
+                    <div class="relative h-64 overflow-hidden">
+                        <img alt="Crustaceans" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="Image/Udang Vanamei.png"/>
+                        <span class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-primary">Pulau Jawa</span>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-bold text-xl text-deep-sea mb-2">Crustaceans</h4>
+                        <p class="text-sm text-gray-500 mb-4">Udang, Kepiting, Lobster, kerang, dll.</p>
+                        <a href="https://wa.me/6285778053118?text=Halo,%20saya%20ingin%20tahu%20lebih%20lanjut%20mengenai%20produk%20Crustaceans." target="_blank" class="text-primary font-bold text-sm flex items-center gap-2 hover:gap-3 transition-all">Details <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+                    </div>
+                </div>
+                <div class="group bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all">
+                    <div class="relative h-64 overflow-hidden">
+                        <img alt="Cephalopods" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjngO4zQU7pkbI0STKx30UmSeB-FMFGrNJE1o1CCqhHi925ojEYFtBbkbWpED1hBLJKQDZ6JsZ2Ji4IkMlDR0PRW7Q00OtsVfMCskfQkePu8hCqt5mke7e-dkZNQzLz4ZE9WeO2GTjJUjr-d6bXGyoL5pw01AuR6CcFzZUz_R5H80prrhetk_pviynV9utMdlecS0pMbIQKpLWj6SAWRh2Dk0WP7xV1M7a9QrsK5M0-hgK71eMlNY-U56c9Hi486wyvzJptXVTUZZQ"/>
+                        <span class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-primary">Pulau Jawa</span>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-bold text-xl text-deep-sea mb-2">Cephalopods</h4>
+                        <p class="text-sm text-gray-500 mb-4">Cumi, gurita, dll.</p>
+                        <a href="https://wa.me/6285778053118?text=Halo,%20saya%20ingin%20tahu%20lebih%20lanjut%20mengenai%20produk%20Cephalopods." target="_blank" class="text-primary font-bold text-sm flex items-center gap-2 hover:gap-3 transition-all">Details <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 border-t border-gray-100 overflow-hidden bg-white">
+    <div class="max-w-7xl mx-auto px-6"> <p class="text-center text-xs font-bold text-gray-400 uppercase tracking-[0.3em] mb-12">
+            Our Partners
+        </p>
+        
+        <div class="relative flex overflow-hidden">
+            <div class="animate-infinite-scroll flex items-center gap-16 md:gap-24 grayscale opacity-60 transition-all duration-500 hover:grayscale-0 hover:opacity-100">
+                
+                <img src="Image/SPPG Sukaluyu/1.png" alt="Partner 1" class="h-16 md:h-20 w-auto object-contain shrink-0">
+                <img src="Image/SPPG Sukaluyu/2.png" alt="Partner 2" class="h-16 md:h-20 w-auto object-contain shrink-0">
+                <img src="Image/SPPG Sukaluyu/3.png" alt="Partner 3" class="h-16 md:h-20 w-auto object-contain shrink-0">
+                <img src="Image/SPPG Sukaluyu/4.png" alt="Partner 4" class="h-16 md:h-20 w-auto object-contain shrink-0">
+                <img src="Image/SPPG Sukaluyu/5.png" alt="Partner 5" class="h-16 md:h-20 w-auto object-contain shrink-0">
+                <img src="Image/SPPG Sukaluyu/6.png" alt="Partner 6" class="h-16 md:h-20 w-auto object-contain shrink-0">
+                <img src="Image/SPPG Sukaluyu/7.png" alt="Partner 7" class="h-16 md:h-20 w-auto object-contain shrink-0">
+                <img src="Image/SPPG Sukaluyu/8.png" alt="Partner 8" class="h-16 md:h-20 w-auto object-contain shrink-0">
+                <img src="Image/SPPG Sukaluyu/9.png" alt="Partner 9" class="h-16 md:h-20 w-auto object-contain shrink-0">
+                <img src="Image/SPPG Sukaluyu/10.png" alt="Partner 10" class="h-16 md:h-20 w-auto object-contain shrink-0">
+                <img src="Image/SPPG Sukaluyu/11.png" alt="Partner 11" class="h-16 md:h-20 w-auto object-contain shrink-0">
+                <img src="Image/SPPG Sukaluyu/12.png" alt="Partner 12" class="h-16 md:h-20 w-auto object-contain shrink-0">
+                <img src="Image/SPPG Sukaluyu/13.png" alt="Partner 13" class="h-16 md:h-20 w-auto object-contain shrink-0">
+                <img src="Image/SPPG Sukaluyu/14.png" alt="Partner 14" class="h-16 md:h-20 w-auto object-contain shrink-0">
+                <img src="Image/SPPG Sukaluyu/15.png" alt="Partner 15" class="h-16 md:h-20 w-auto object-contain shrink-0">
+                <img src="Image/SPPG Sukaluyu/16.png" alt="Partner 16" class="h-16 md:h-20 w-auto object-contain shrink-0">
+                <img src="Image/SPPG Sukaluyu/17.png" alt="Partner 17" class="h-16 md:h-20 w-auto object-contain shrink-0">
+
+                <img src="Image/SPPG Sukaluyu/1.png" alt="Partner 1" class="h-16 md:h-20 w-auto object-contain shrink-0">
+                <img src="Image/SPPG Sukaluyu/2.png" alt="Partner 2" class="h-16 md:h-20 w-auto object-contain shrink-0">
+                <img src="Image/SPPG Sukaluyu/3.png" alt="Partner 3" class="h-16 md:h-20 w-auto object-contain shrink-0">
+                <img src="Image/SPPG Sukaluyu/4.png" alt="Partner 4" class="h-16 md:h-20 w-auto object-contain shrink-0">
+                <img src="Image/SPPG Sukaluyu/5.png" alt="Partner 5" class="h-16 md:h-20 w-auto object-contain shrink-0">
+                <img src="Image/SPPG Sukaluyu/6.png" alt="Partner 6" class="h-16 md:h-20 w-auto object-contain shrink-0">
+                <img src="Image/SPPG Sukaluyu/7.png" alt="Partner 7" class="h-16 md:h-20 w-auto object-contain shrink-0">
+                <img src="Image/SPPG Sukaluyu/8.png" alt="Partner 8" class="h-16 md:h-20 w-auto object-contain shrink-0">
+                <img src="Image/SPPG Sukaluyu/9.png" alt="Partner 9" class="h-16 md:h-20 w-auto object-contain shrink-0">
+                <img src="Image/SPPG Sukaluyu/10.png" alt="Partner 10" class="h-16 md:h-20 w-auto object-contain shrink-0">
+                </div>
+        </div>
     </div>
 </section>
-    </main>
 
-    <section id="contact" class="contact">
-    <h2>Hubungi Kami</h2>
-    <p class="section-subtitle">Punya pertanyaan atau ingin bekerja sama? Jangan ragu untuk menghubungi kami!</p>
-    <div class="contact-container">
-        <div class="contact-info">
-            <h3>Informasi Kontak</h3>
-            <p><strong>Alamat:</strong><br>Jl. Tuna III Penjaringan Jakarta Utara, Indonesia</p>
-            <p><strong>Email:</strong><br><a href="mailto:admin@beraeikan.site">admin@beraeikan.site</a></p>
-            <p><strong>Telepon / WhatsApp:</strong><br><a href="https://wa.me/6285778053118" target="_blank" rel="noopener noreferrer">0857-7805-3118</a></p>
+    <section class="py-24 bg-gray-50" id="certifications">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10">
+            <div class="text-center mb-16">
+                <h3 class="text-deep-sea text-4xl font-black tracking-tight">Our Certifications</h3>
+                <p class="text-gray-500 mt-4">Kami mematuhi standar keamanan pangan internasional yang paling ketat.</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 aspect-square flex items-center justify-center">
+                    <img src="Image/HACCP.jpg" alt="HACCP" class="max-w-full max-h-full object-contain">
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 aspect-square flex items-center justify-center">
+                    <img src="Image/Halal_Indonesia.svg.png" alt="Halal" class="max-w-full max-h-full object-contain">
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 aspect-square flex items-center justify-center">
+                    <img src="Image/SKP.jpeg" alt="SKP" class="max-w-full max-h-full object-contain">
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 aspect-square flex items-center justify-center">
+                    <img src="Image/CBIB.png" alt="CBIB" class="max-w-full max-h-full object-contain">
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 aspect-square flex items-center justify-center">
+                    <img src="Image/CPIB.png" alt="CPIB" class="max-w-full max-h-full object-contain">
+                </div>
+            </div>
         </div>
-        
-        <div class="contact-form">
-            <h3>Kirim Pesan</h3>
-            <form action="https://formspree.io/f/xqavjjwz" method="POST">
-                <label>
-                    <input type="text" name="name" placeholder="Nama Anda" required>
-                </label>
-                <label>
-                    <input type="email" name="email" placeholder="Email Anda" required>
-                </label>
-                <label>
-                    <textarea name="message" rows="6" placeholder="Pesan Anda" required></textarea>
-                </label>
-                <button type="submit" class="cta-button">Kirim Pesan</button>
-            </form>
+    </section>
+
+    <section class="py-24" id="contact">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10">
+            <div class="bg-deep-sea rounded-3xl p-12 lg:p-20 text-center text-white mb-24 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full -mr-32 -mt-32"></div>
+                <h3 class="text-3xl md:text-5xl font-black mb-8 relative z-10">Ready to Scale Your Seafood Business?</h3>
+                <p class="text-xl opacity-80 mb-10 max-w-2xl mx-auto relative z-10">Dapatkan penawaran harga terbaik untuk volume besar sekarang juga.</p>
+                <a href="https://wa.me/6285778053118?text=Halo%20PT%20Berae%20Segara%20Nusantara,%20saya%20ingin%20meminta%20penawaran%20harga%20untuk%20volume%20besar." target="_blank" class="bg-primary text-white px-12 py-5 rounded-full text-xl font-bold hover:scale-105 transition-all relative z-10 inline-block">
+                    Minta Penawaran
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+    <div>
+        <h4 class="text-deep-sea text-3xl font-black mb-8">Send Us a Message</h4>
+        <form action="https://formspree.io/f/xlgggrrj" method="POST" class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="space-y-2">
+                    <label class="text-sm font-bold text-deep-sea">Full Name</label>
+                    <input name="name" class="w-full border-gray-200 rounded-lg focus:ring-primary focus:border-primary p-3" placeholder="John Doe" type="text" required/>
+                </div>
+                <div class="space-y-2">
+                    <label class="text-sm font-bold text-deep-sea">Company Email</label>
+                    <input name="email" class="w-full border-gray-200 rounded-lg focus:ring-primary focus:border-primary p-3" placeholder="john@company.com" type="email" required/>
+                </div>
+            </div>
+            <div class="space-y-2">
+                <label class="text-sm font-bold text-deep-sea">Interest</label>
+                <select name="interest" class="w-full border-gray-200 rounded-lg focus:ring-primary focus:border-primary p-3">
+                    <option value="Bulk Procurement">Bulk Procurement</option>
+                    <option value="Retail Partnership">Retail Partnership</option>
+                    <option value="Export Inquiry">Export Inquiry</option>
+                </select>
+            </div>
+            <div class="space-y-2">
+                <label class="text-sm font-bold text-deep-sea">Message</label>
+                <textarea name="message" class="w-full border-gray-200 rounded-lg focus:ring-primary focus:border-primary p-3" placeholder="Tell us about your requirements..." rows="4" required></textarea>
+            </div>
+            <button type="submit" class="w-full bg-primary text-white py-4 rounded-lg font-bold hover:bg-blue-600 transition-colors">
+                Send Inquiry
+            </button>
+        </form>
+    </div>
+    
+    <div class="space-y-8">
+        <h4 class="text-deep-sea text-3xl font-black mb-8">Visit Our Office</h4>
+        <div class="w-full h-[400px] bg-gray-200 rounded-2xl overflow-hidden relative">
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB_MP0TW3b2Y893jFCE7gh7u7rVO94ulteDg5MbG7oLPMAst99RL5vBo2Rc3e6RWrAo4EYXPPoJWKHUcHZpQCE3tw7caFwFI_urLbkdVx2I6VzJzbZSOekx6G3FtG4JUfPCuOagqgGYiLuWVkSfuOFlRzRt-71lYx0NX4N6hZ4ajJqX8IlKBXaYZfvi1srurqFMNhuc5lmC8ef9_ca1nNcu-p4sg4w1kvBHwD1ate8zEXpE2iTya8vPV_8UNS_gTzYf_QaR94IOhE7U'); filter: grayscale(1);"></div>
+            <div class="absolute inset-0 bg-primary/10"></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+                <div class="bg-white p-4 rounded-xl shadow-xl flex items-center gap-3">
+                    <span class="material-symbols-outlined text-primary">location_on</span>
+                    <span class="font-bold text-deep-sea">Jakarta, Indonesia</span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <p class="font-bold text-deep-sea mb-1">Main Warehouse</p>
+            <p class="text-sm text-gray-500 leading-relaxed">Pergudangan Jakpro, Penjaringan, Jakarta Utara.</p>
         </div>
     </div>
-</section>
+</div>
+        </div>
+    </section>
+</main>
 
-    <footer>
-        <p>© 2025 BERAE. Hak Cipta Dilindungi.</p>
-    </footer>
-    </footer>
+<footer class="bg-deep-sea text-white py-20">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+            <div class="space-y-6">
+                <div class="flex items-center gap-3">
+                    <span class="text-xl font-black">BERAE SEGARA</span>
+                </div>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    Distributor bahan baku seafood berkualitas tinggi dengan standar global. Menghubungkan kekayaan laut Nusantara ke seluruh penjuru dunia.
+                </p>
+            </div>
+            <div>
+                <h5 class="font-bold mb-6">Quick Links</h5>
+                <ul class="space-y-4 text-sm text-gray-400">
+                    <li><a class="hover:text-white transition-colors" href="#about">About Company</a></li>
+                    <li><a class="hover:text-white transition-colors" href="#products">Our Products</a></li>
+                    <li><a class="hover:text-white transition-colors" href="#certifications">Quality Control</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-bold mb-6">Support</h5>
+                <ul class="space-y-4 text-sm text-gray-400">
+                    <li><a class="hover:text-white transition-colors" href="#">FAQ</a></li>
+                    <li><a class="hover:text-white transition-colors" href="#">Shipping Info</a></li>
+                    <li><a class="hover:text-white transition-colors" href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-bold mb-6">Contact Us</h5>
+                <ul class="space-y-4 text-sm text-gray-400">
+                    <li class="flex gap-3">
+                        <span class="material-symbols-outlined text-primary">call</span>
+                        <span>+62 857-7805-3118</span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="material-symbols-outlined text-primary">mail</span>
+                        <span>marketing@beraeikan.site</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="pt-8 border-t border-white/10 text-center text-sm text-gray-500">
+            <p>© 2025 PT Berae Segara Nusantara. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
 
-    <a href="https://wa.me/6285778053118" 
-       class="whatsapp-float" 
-       target="_blank" 
-       rel="noopener noreferrer" 
-       aria-label="Hubungi kami via WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <script>
-        // 1. Ambil elemen HTML yang kita butuhkan
-        const hamburgerBtn = document.getElementById('hamburger-btn');
-        const navLinks = document.getElementById('nav-links');
-
-        // 2. Tambahkan 'event listener' untuk klik pada tombol hamburger
-        hamburgerBtn.addEventListener('click', () => {
-            // Toggle (tambah/hapus) kelas 'nav-open' pada daftar link
-            navLinks.classList.toggle('nav-open');
-            // Toggle kelas 'is-active' pada tombol untuk animasi 'X'
-            hamburgerBtn.classList.toggle('is-active');
-        });
-
-        // 3. [Bonus] Tutup menu saat salah satu link diklik
-        // Ini berguna agar menu otomatis tertutup setelah pengguna memilih halaman
-        const allNavLinks = document.querySelectorAll('#nav-links li a');
-        allNavLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('nav-open');
-                hamburgerBtn.classList.remove('is-active');
-            });
-        });
-    </script>
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-
-<script>
-    AOS.init({
-        duration: 800, // Durasi animasi dalam milidetik
-        once: true,    // Animasi hanya terjadi sekali
-    });
-</script>
 </body>
 </html>
